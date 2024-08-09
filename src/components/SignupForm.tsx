@@ -4,6 +4,7 @@ import { Label } from "./ui/Label";
 import { Input } from "./ui/Input";
 import { useUser } from "@clerk/nextjs";
 import axios from "axios";
+import { useEdgeStore } from '../lib/edgestore';
 
 import { cn } from "@/lib/utils";
 import {
@@ -16,6 +17,12 @@ import { Textarea } from "@/components/ui/textarea"
 
 
 export function SignupForm() {
+
+  const [file, setFile] = useState<File>();
+  const { edgestore } = useEdgeStore();
+
+
+
     const [isLoading, setIsLoading] = useState(false);
 
     const {user} = useUser();
@@ -31,35 +38,55 @@ export function SignupForm() {
         return;
     }
 
-    const title = formdata.get("title") as string;
-    const description = formdata.get("description") as string;
-    const price = formdata.get("price") as string;
-    const picture = formdata.get("picture") as File;
+    const title = formdata.get("title");
+    const description = formdata.get("description");
+    const price = formdata.get("price");
+    // get the fileURL from edge api
+    
 
-    if(!title || !price || !picture){
-        console.log("Please fill in all the details");
-        return;
+
+    
+    if(!title || !price){
+      console.log("Please fill in all the details");
+      return;
     }
-
-    console.log("Name: ", title);
+    
+    console.log("title", title)
     console.log("Description: ", description);
     console.log("Price: ", price);
 
 
+    if(file){
+      const res = await edgestore.publicFiles.upload({
+        file,
+      })
+  
+      const size = res.size;
+      console.log("size : ",size);
+      const url = res.url;
+      console.log("url : ", url);
+      
+      const response = await axios.post("/api/post",{
+          title,
+          description,
+          price,
+          userId,
+          url
+      })
 
-    const post = async()=>{
-        const response = await axios.post("/api/post",{
-            title: "Title",
-            description: "Description",
-            price: 100,
-            userId: userId
-        });
-        console.log(response);
+      console.log(response);
+      console.log("Form submitted");
+      setIsLoading(false);
+      return
     }
+    else{
+      setIsLoading(false)
+      throw new Error("No file selected");
 
-    console.log("Form submitted");
-    // setIsLoading(false);
-  };
+    }
+  }
+
+  
 
 
 
@@ -87,7 +114,10 @@ export function SignupForm() {
         </LabelInputContainer>
         <LabelInputContainer className="mb-4">
             <Label htmlFor="picture">Upload Picture<span className = "text-red-600">*</span></Label>
-            <input id="picture" type="file" />
+            <input id="picture" type="file"
+            onChange={(e) => {
+              setFile(e.target.files?.[0])}}
+            />
         </LabelInputContainer>
 
         <div className = "flex justify-center">

@@ -3,44 +3,29 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
   directUrl = env("DIRECT_URL")
 }
 
-model User{
-  id Int @id @default(autoincrement())  
-  externalId String @unique   // This is the id from the clerk provider
-  email String @unique
-  name String
-  image String
+model User {
+  id          Int    @id @default(autoincrement())
+  externalId  String @unique
+  email       String @unique
+  studentId   String @default("0")
+  name        String
+  image       String
   phoneNumber String
-  posts Post[]
-  studentId String @default("0")
+  posts       Post[]
 }
 
-model Post{
-  id Int @id @default(autoincrement())
-  title String
+model Post {
+  id          Int      @id @default(autoincrement())
+  title       String
   description String
-  publishedAt Boolean @default(false)
-  userEmail String
-  user User @relation(fields: [userEmail], references: [email])
-  image String
-  universityName String
-  university University @relation(fields : [universityName], references: [name])
-}
-
-model University{
-  id Int @id @default(autoincrement())
-  name String @unique
-  posts Post[]
-  cityName String
-  city City @relation (fields: [cityName], references: [name])
-}
-
-model City{
-  id Int @id @default(autoincrement())
-  name String @unique
-  universities University[]
+  image       String
+  price       String
+  userId      String
+  createdAt   DateTime @default(now())
+  user        User     @relation(fields: [userId], references: [externalId])
 }

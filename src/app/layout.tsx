@@ -5,6 +5,7 @@ import {
   UserButton,
   SignIn
 } from '@clerk/nextjs'
+import { EdgeStoreProvider } from '@/lib/edgestore'
 
 import './globals.css'
 
@@ -17,12 +18,14 @@ export default function RootLayout({
       <ClerkProvider>
         <html lang="en">
           <body className = "inter.classname">
+          <EdgeStoreProvider>
             <SignedIn>
               {children}
             </SignedIn>
             <SignedOut>
               {children}
             </SignedOut>
+          </EdgeStoreProvider>
           </body>
         </html>
       </ClerkProvider>
