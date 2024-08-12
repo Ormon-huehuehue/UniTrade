@@ -113,13 +113,13 @@ export function ExpandableCardDemo({ cards }: { cards: activeProps[] }) {
           </div>
         ) : null}
       </AnimatePresence>
-      <ul className="max-w-2xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 items-start gap-4">
+      <ul className="w-full mx-auto flex gap-4">
         {cards.map((card) => (
           <motion.div
             layoutId={`card-${card.title}-${id}`}
             key={card.title}
             onClick={() => setActive(card)}
-            className="p-4 flex flex-col hover:bg-neutral-50 dark:hover:bg-neutral-800 rounded-xl cursor-pointer border-2"
+            className="p-4 flex flex-col hover:bg-neutral-50 dark:hover:bg-neutral-800 rounded-xl cursor-pointer border-2 w-[300px]"
           >
             <div className="flex gap-4 flex-col w-full">
               <motion.div layoutId={`image-${card.title}-${id}`}>

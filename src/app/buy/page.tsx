@@ -50,7 +50,7 @@ const page = () => {
        
       <div className="my-5 border-2 flex flex-col gap-2">
       <div className = "flex mt-2 p-2">
-      <span>
+      <span className = "w-full">
         <Suspense fallback={<div className = "text-black text-8xl font-amatic font-bold"> LOADING.....</div>}>
         <ExpandableCardDemo cards = {posts}/>
         </Suspense>
