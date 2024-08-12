@@ -18,7 +18,7 @@ const BuyButton = ({label, url} :ButtonProps) => {
          <motion.button 
          whileHover={{scale:1.1}}
          whileTap = {{scale:0.9}}
-         className = "bg-gray xl:w-[10rem] md:w-[7rem] rounded-md text-white font-bol font-amatic xl:text-[2rem] md:text-[1rem] justify-center items-center"> {label}</motion.button>
+         className = "bg-gray xl:w-[10rem] md:w-[7rem] rounded-md text-white font-bol font-amatic xl:text-[3rem] md:text-[1rem] justify-center items-center"> {label}</motion.button>
     </Link>
    
   )

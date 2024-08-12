@@ -86,25 +86,29 @@ export function ExpandableCardDemo({ cards }: { cards: activeProps[] }) {
                     exit={{ opacity: 0 }}
                     transition={{ duration: 0.2 }}
                   >
-                    <div className="flex justify-around items-start py-8">
-                      <div className="flex flex-col justify-between">
+                    <div className="flex justify-around  py-8">
+                      <div className="flex flex-col justify-around text-md pl-5">
                         <motion.h3
                           layoutId={`title-${active.title}-${id}`}
-                          className="font-semibold text-neutral-700 dark:text-neutral-200 text-base"
+                          className=" text-neutral-700 dark:text-neutral-200 "
                         >
-                          {active.title}
+                           <span className ="font-semibold">TITLE : </span>{active.title}
+                          
                         </motion.h3>
-                        <motion.p className="text-neutral-600 dark:text-neutral-400 text-base">
-                          {active.description}
+                        <motion.p className="text-neutral-600 dark:text-neutral-400 ">
+                          <span className ="font-semibold">DESCRIPTION : </span>{active.description}
                         </motion.p>
-                        <motion.p className="text-neutral-600 dark:text-neutral-400 text-base">
+                        <motion.p className="text-neutral-600 dark:text-neutral-400 ">
                           <h1 className="font-semibold">POSTED BY : <span className="font-medium">{active.user.name}</span></h1>
                         </motion.p>
-                        <motion.p className="text-neutral-600 dark:text-neutral-400 text-base">
-                          <h1 className="font-semibold">CONTACT DETAILS : <span className="font-medium">{active.user.phoneNumber}</span></h1>
+                        <motion.p className="text-neutral-600 dark:text-neutral-400">
+                          <h1 className="font-semibold">CONTACT : <span className="font-medium">{active.user.phoneNumber}</span></h1>
                         </motion.p>
                       </div>
-                      <BuyButton label="BUY" url="/" />
+                      <div className = "flex flex-col mr-5">
+                        <h1 className ="font-bold text-center text-[3rem] pb-2 font-amatic ">Rs {active.price}</h1>
+                        <BuyButton label="BUY" url="/" />
+                      </div>
                     </div>
                   </motion.div>
                 )}
@@ -142,7 +146,7 @@ export function ExpandableCardDemo({ cards }: { cards: activeProps[] }) {
                   layoutId={`Price-${card.price}-${id}`}
                   className="text-neutral-600 dark:text-neutral-400 text-center md:text-left text-base"
                 >
-                  {card.description}
+                  Rs {card.price}
                 </motion.p>
               </div>
             </div>
