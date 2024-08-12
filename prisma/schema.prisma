@@ -28,4 +28,5 @@ model Post {
   userId      String
   createdAt   DateTime @default(now())
   user        User     @relation(fields: [userId], references: [externalId])
+  sold Boolean @default(false)
 }

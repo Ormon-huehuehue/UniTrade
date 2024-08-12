@@ -10,7 +10,7 @@ interface ButtonProps{
     url : string
 }
 
-const Button = ({label, url} :ButtonProps) => {
+const BuyButton = ({label, url} :ButtonProps) => {
 
   return (
    
@@ -18,10 +18,10 @@ const Button = ({label, url} :ButtonProps) => {
          <motion.button 
          whileHover={{scale:1.1}}
          whileTap = {{scale:0.9}}
-         className = "bg-gray xl:w-[20rem] md:w-[15rem] rounded-md text-white font-bol font-amatic xl:text-[5rem] md:text-[4rem] justify-center items-center"> {label}</motion.button>
+         className = "bg-gray xl:w-[10rem] md:w-[7rem] rounded-md text-white font-bol font-amatic xl:text-[2rem] md:text-[1rem] justify-center items-center"> {label}</motion.button>
     </Link>
    
   )
 }
 
-export default Button
+export default BuyButton

@@ -45,7 +45,7 @@ export default function WordPullUp({
           key={i}
           variants={framerProps}
           style={{ display: "inline-block", paddingRight: "8px" }}
-          className= "text-[12rem] mt-12"
+          className= "xl:text-[12rem] md:text-[5rem] lg:text-[6rem] mt-12"
         >
           {word === "" ? <span>&nbsp;</span> : word}
         </motion.span>

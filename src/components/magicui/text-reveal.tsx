@@ -27,17 +27,17 @@ export const TextRevealByWord: FC<TextRevealByWordProps> = ({
     <div ref={targetRef} className={cn("relative z-0 h-[200vh]", className)}>
       <div
         className={
-          "sticky top-0 mx-auto flex h-[50%] max-w-8xl items-center bg-transparent px-[1rem] py-[5rem] justify-start"
+          "sticky top-0 mx-auto flex h-[50%] max-w-8xl items-center bg-transparent px-[1rem] py-[10rem] justify-start"
         }
       >
         
-        <div className = "absolute right-0 z-5 w-[30rem] mt-[6rem]">        
+        <div className = "absolute right-[-1rem] z-5 w-[30rem] mt-[6rem]">        
             <Card content={"Buy and Sell Pre-Loved items"}/>
         </div>
         <p
           ref={targetRef}
           className={
-            "flex flex-wrap p-5 text-2xl font-bold text-black/20 dark:text-white/20 md:p-8 md:text-3xl lg:p-10 lg:text-[5rem] xl:text-[6rem]"
+            "flex flex-wrap xl:p-5 font-bold text-black/20 dark:text-white/20 md:py-[8rem] md:text-xl lg:px-2 lg:py-[20rem] lg:text-[3rem] xl:text-[6rem]"
           }
         >
           {words.map((word, i) => {

@@ -5,18 +5,18 @@ import { useEffect } from 'react'
 import axios from 'axios'
 import { useRecoilState } from 'recoil'
 import { postsAtom } from '@/atoms'
-import PostCard from '@/components/PostCard'
 import Navbar from '@/components/Navbar'
 import { PostCardProps } from '@/components/PostCard'
 import { ExpandableCardDemo } from '@/components/ExpandableCard'
 import { PlaceholdersAndVanishInput } from '@/components/ui/placeholders-and-vanish-input'
+import { activeProps } from '@/components/ExpandableCard'
 
 
 const page = () => {
 
   const [search, setSearch] = useState("")
 
-  const [posts, setPosts] = useState([] as PostCardProps[])
+  const [posts, setPosts] = useState([] as activeProps[])
 
   useEffect(()=>{
     axios.get("/api/getposts").
@@ -48,16 +48,10 @@ const page = () => {
           
       </div>
        
-      <div className="mt-5 border-2 flex flex-col gap-2">
-      <div className = "flex mt-2 p-2 border-2">
-        {/* {posts.map((post, index)=>(
-          <div key={index}>
-            <PostCard title={post.title} price={post.price} imgUrl={post.image}/>
-          </div>
-        ))} */}
-        {/* <PostCard title="title" price="price" imgUrl="https://images.ctfassets.net/005nulnwwll2/3lZNIBc8GqmRDrAd62AUZg/1de08f8924fbfd1b31708ad51d6aac06/person-with-books-on-phone.png?fm=webp&w=3000"/> */}
+      <div className="my-5 border-2 flex flex-col gap-2">
+      <div className = "flex mt-2 p-2">
       <span>
-        <Suspense fallback={<div className = "text-black"></div>}>
+        <Suspense fallback={<div className = "text-black text-8xl font-amatic font-bold"> LOADING.....</div>}>
         <ExpandableCardDemo cards = {posts}/>
         </Suspense>
 

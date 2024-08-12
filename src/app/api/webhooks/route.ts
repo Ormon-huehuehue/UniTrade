@@ -58,7 +58,7 @@ export async function POST(req: Request) {
     const data = evt.data;
     const {id, email_addresses, first_name, last_name, image_url} =data
     const phone_numbers = data.phone_numbers;
-    const name = first_name as string + last_name as string
+    const name = first_name as string | "" + last_name as string | ""
 
     if(!id || !email_addresses){
       return new Response("Error occured : missing data (user.updated event")

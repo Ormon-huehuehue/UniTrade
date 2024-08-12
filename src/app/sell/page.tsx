@@ -12,7 +12,7 @@ const page = () => {
     </div>
     <div className="top-0 left-0 max-w-full ml-5 mr-5">
       <div className ="flex flex-col ">
-        <h6 className ="font-bold font-amatic text-[8rem] text-center">
+        <h6 className ="font-bold font-amatic xl:text-[8rem] lg:text-[4rem] text-center">
           Create Post
         </h6>
           <SignupForm/>
