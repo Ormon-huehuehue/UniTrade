@@ -35,6 +35,7 @@ export function SignupForm() {
 
     if(!userId){
         console.log("User not logged in");
+        setIsLoading(false);
         return;
     }
 
@@ -48,6 +49,7 @@ export function SignupForm() {
     
     if(!title || !price){
       console.log("Please fill in all the details");
+      setIsLoading(false);
       return;
     }
     
@@ -74,7 +76,7 @@ export function SignupForm() {
           url
       })
 
-      console.log(response);
+      console.log(response.data);
       console.log("Form submitted");
       setIsLoading(false);
       return

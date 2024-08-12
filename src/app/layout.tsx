@@ -8,6 +8,7 @@ import {
 import { EdgeStoreProvider } from '@/lib/edgestore'
 
 import './globals.css'
+import { RecoilRoot } from 'recoil'
 
 export default function RootLayout({
   children,
@@ -16,6 +17,7 @@ export default function RootLayout({
 }) {
   return (
       <ClerkProvider>
+     
         <html lang="en">
           <body className = "inter.classname">
           <EdgeStoreProvider>
@@ -28,6 +30,7 @@ export default function RootLayout({
           </EdgeStoreProvider>
           </body>
         </html>
+       
       </ClerkProvider>
  
   )

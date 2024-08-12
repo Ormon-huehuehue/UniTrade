@@ -11,10 +11,11 @@ const page = () => {
         <Navbar/>
     </div>
     <div className="top-0 left-0 max-w-full ml-5 mr-5">
-      <div className ="relative ">
-        <ContainerScroll titleComponent= {<h6 className="text-[100px] font-bold font-amatic">Create Post</h6>}>
+      <div className ="flex flex-col ">
+        <h6 className ="font-bold font-amatic text-[8rem] text-center">
+          Create Post
+        </h6>
           <SignupForm/>
-        </ContainerScroll>
       </div>
         
 

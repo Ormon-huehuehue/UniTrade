@@ -1,6 +1,5 @@
 "use server"
 
-import { NextApiRequest, NextApiResponse } from "next";
 import { PrismaClient } from "@prisma/client";
 import { Post } from "@prisma/client";
 import { NextResponse } from "next/server";
@@ -15,12 +14,7 @@ export async function POST(request : Request)  {
         const { title, description, price, userId, url }  = body
 
         console.log(body)
-
-
-
-
         
-
           const post = await prisma.post.create({
             data: {
               title,
@@ -35,7 +29,8 @@ export async function POST(request : Request)  {
             },
             
           });
-          return NextResponse.json("Post created successfully");
+          NextResponse.json("Post created successfully");
+          return NextResponse.json({Post : post})
 
     }
     catch(error){
