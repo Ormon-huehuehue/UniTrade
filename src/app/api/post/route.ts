@@ -4,8 +4,7 @@ import { PrismaClient } from "@prisma/client";
 import { Post } from "@prisma/client";
 import { NextResponse } from "next/server";
 import axios from "axios";
-
-const prisma = new PrismaClient();
+import prisma from "@/lib/prisma";
 
 
 export async function POST(request : Request)  {
