@@ -1,7 +1,5 @@
 import React from 'react';
 import Navbar from '@/components/Navbar';
-import { ContainerScroll } from '@/components/aceternityUi/container-scroll-animation';
-import Button from '@/components/Button';
 import { SignupForm } from '@/components/SignupForm';
 
 const page = () => {

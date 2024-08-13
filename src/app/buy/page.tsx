@@ -1,15 +1,11 @@
 "use client"
 
-import React, { Suspense, useState } from 'react'
-import { useEffect } from 'react'
-import axios from 'axios'
-import { useRecoilState } from 'recoil'
-import { postsAtom } from '@/atoms'
+import React, { useState } from 'react'
 import Navbar from '@/components/Navbar'
-import { PostCardProps } from '@/components/PostCard'
-import { ExpandableCardDemo } from '@/components/ExpandableCard'
+
 import { PlaceholdersAndVanishInput } from '@/components/ui/placeholders-and-vanish-input'
 import { activeProps } from '@/components/ExpandableCard'
+import PostCards from '@/components/PostCards'
 
 
 const page = () => {
@@ -18,15 +14,7 @@ const page = () => {
 
   const [posts, setPosts] = useState([] as activeProps[])
 
-  useEffect(()=>{
-    axios.get("/api/getposts").
-    then((res)=>{
-      setPosts(res.data)
-    })
-    .then(()=>{
-      console.log("Posts", posts)
-    })
-  },[search])
+ 
 
   function onChangeHandler(){
     console.log("Search bar changin")
@@ -51,9 +39,8 @@ const page = () => {
       <div className="my-5 border-2 flex flex-col gap-2">
       <div className = "flex mt-2 p-2">
       <span className = "w-full">
-        <Suspense fallback={<div className = "text-black text-8xl font-amatic font-bold"> LOADING.....</div>}>
-        <ExpandableCardDemo cards = {posts}/>
-        </Suspense>
+        <PostCards/>
+        
 
       </span>
       </div>
