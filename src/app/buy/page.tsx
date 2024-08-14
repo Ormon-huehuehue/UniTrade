@@ -9,8 +9,6 @@ import SearchField from '@/components/SearchField'
 
 const page = () => {
 
-
-
   return (
     
   <div className = "flex flex-col">
@@ -22,13 +20,12 @@ const page = () => {
       {/* <div className = "justify-center">
       </div> */}
        
-      <div className="my-5 border-2 flex flex-col gap-2">
-      <div className = "flex mt-2 p-2">
-      <span className = "w-full">
-        <PostCards/>
-
-      </span>
-      </div>
+      <div className="my-5 border-2 flex flex-col gap-2 flex-wrap">
+        <div className = "flex mt-2 p-2 flex-wrap max-w-screen">
+          <span className = " flex-wrap">
+            <PostCards/>
+          </span>
+        </div>
       </div>
 
       

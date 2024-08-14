@@ -1,10 +1,9 @@
-import { PrismaClient } from "@prisma/client";
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import prisma from "@/lib/prisma";
 
 
 
-export async function GET(request : Request){
+export async function GET(request : NextRequest){
     try{
         const unsoldPosts = await prisma.post.findMany({
             where:{

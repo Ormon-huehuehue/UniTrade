@@ -7,14 +7,14 @@ import { motion } from 'framer-motion'
 
 interface ButtonProps{
     label : string,
-    url : string
+    param : number
 }
 
-const BuyButton = ({label, url} :ButtonProps) => {
+const BuyButton = ({label, param} :ButtonProps) => {
 
   return (
    
-    <Link href = {url}> 
+    <Link href = {`/buy/${param}`}> 
          <motion.button 
          whileHover={{scale:1.1}}
          whileTap = {{scale:0.9}}

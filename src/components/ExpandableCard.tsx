@@ -6,6 +6,7 @@ import { User } from "@prisma/client";
 import BuyButton from "./BuyButton";
 
 export interface activeProps {
+  id : number
   title: string,
   description: string,
   price: string,
@@ -107,7 +108,7 @@ export function ExpandableCardDemo({ cards }: { cards: activeProps[] }) {
                       </div>
                       <div className = "flex flex-col mr-5">
                         <h1 className ="font-bold text-center text-[3rem] pb-2 font-amatic ">Rs {active.price}</h1>
-                        <BuyButton label="BUY" url="/" />
+                        <BuyButton label="BUY" param={active.id} />
                       </div>
                     </div>
                   </motion.div>
