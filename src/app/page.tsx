@@ -5,6 +5,7 @@ import WordPullUp from "@/components/magicui/word-pull-up";
 import TextRevealByWord from "@/components/magicui/text-reveal";
 import Card from "@/components/Card";
 import BasicInfoSection from "@/components/BasicInfoSection";
+import QuestionComponent from "@/components/QuestionComponent";
 
 export default async function Home() {
 
@@ -47,13 +48,19 @@ export default async function Home() {
     
 
     {/* Burning questions */}
-    <section className = "flex flex-col bg-sageGreen ">
+    <section className = "flex flex-col bg-sageGreen px-5">
       <div className="flex justify-center top-[16vw] z-50 font-amatic mx-5 font-bold ">
           <WordPullUp
             className="ml-5 font-bold tracking-[-0.02em] text-black dark:text-white justify-start"
             words="BURNING  QUESTIONS"
           />
       </div>
+
+      <div className="py-[3vw] z-5 flex flex-col md:flex-row items-center justify-center gap-5 lg:gap-20 font-montserrat ">
+            <QuestionComponent question={"How can I trust the sellers?"} answer="All users are verified students from our network of partner universities. We do the legwork, so you don't have to!" />
+            <QuestionComponent question={"What can I trade?"} answer="Anything from textbooks to tech gadgets to toasters. If it’s not illegal and fits in a dorm room, it’s probably fair game." />
+            <QuestionComponent question={"Do I need to pay?"} answer="Nope! Uni Trade is completely free to use. Just sign in, list your item and start trading. Keeping pennies in students’ pockets, that’s our motto." />
+          </div>
 
     </section>
 
