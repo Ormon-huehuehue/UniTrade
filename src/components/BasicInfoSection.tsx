@@ -29,7 +29,7 @@ const BasicInfoSection = () => {
           </div>
 
           {/* Cards */}
-          <div className=" sm:right-[25%] mt-[25vw] z-5 flex flex-col items-center gap-5 sm:max-w-[20%]">
+          <div className="mt-[25vw] z-5 flex flex-col items-center justify-center gap-5">
             <Card content={"For the students, By the students"} />
             <Card content={"Buy and Sell Pre-Loved items"} />
           </div>
