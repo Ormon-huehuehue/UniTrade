@@ -12,7 +12,7 @@ const Navbar =  () => {
 
 
   return (
-    <nav className = " py-4 px-5 flex justify-between font-amatic">
+    <nav className = "py-2 px-5 flex justify-between font-amatic">
         <div id="links" className = "md:text-4xl xsm:text-2xl  flex gap-10 items-center">
             <Link href = "/" className = "font-amatic font-bold hover:text-white" >Uni Trade</Link>
             <Link href = "/buy" className = "font-bold  cursor-pointer  hover:text-white"> Buy</Link>

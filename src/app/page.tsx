@@ -10,7 +10,7 @@ export default async function Home() {
 
   return (
   <div className="h-screen object-fill flex flex-col">
-    <div className=" top-0 left-0 w-full z-10 bg-sageGreen">
+    <div className="absolute top-0 left-0 w-full z-10 bg-sageGreen">
       <Navbar />
     </div>
 
@@ -48,8 +48,11 @@ export default async function Home() {
 
     {/* Burning questions */}
     <section className = "flex flex-col bg-sageGreen ">
-      <div>
-        <h6 className = "text-[5vw] font-amatic"> BURNING QUESTIONS</h6>
+      <div className="flex justify-center top-[16vw] z-50 font-amatic mx-5 font-bold ">
+          <WordPullUp
+            className="ml-5 font-bold tracking-[-0.02em] text-black dark:text-white justify-start"
+            words="BURNING  QUESTIONS"
+          />
       </div>
 
     </section>
