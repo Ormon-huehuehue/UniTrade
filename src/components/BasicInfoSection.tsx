@@ -17,10 +17,10 @@ const BasicInfoSection = () => {
         </div>
 
         {/* Main Content Area */}
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col items-center w-full">
           
           {/* Image */}
-          <div className="w-[60vw] sm:w-[40vw] sm:absolute sm:right-[25%] sm:mt-0">
+          <div className=" w-[40vw] absolute right-[28%] ">
             <img
               src="https://images.ctfassets.net/005nulnwwll2/3smdwTwU6DHhTo9tyOAElT/b5ac8699890d874a7fd32efe82af0cff/person-sitting-looking-at-phone.png?fm=webp&w=1600"
               className="mx-auto sm:mx-0"
@@ -29,14 +29,14 @@ const BasicInfoSection = () => {
           </div>
 
           {/* Cards */}
-          <div className="mt-10 sm:right-[25%] sm:mt-[25vw] z-5 w-full sm:w-[30rem] flex flex-col items-center gap-5">
+          <div className=" sm:right-[25%] mt-[25vw] z-5 flex flex-col items-center gap-5 sm:max-w-[20%]">
             <Card content={"For the students, By the students"} />
             <Card content={"Buy and Sell Pre-Loved items"} />
           </div>
         </div>
 
         {/* Text Reveal - Only Visible on Larger Screens */}
-        <div className="hidden sm:block ">
+        <div>
           <TextRevealByWord text="Simplify college life, one trade at a time" />
         </div>
 
