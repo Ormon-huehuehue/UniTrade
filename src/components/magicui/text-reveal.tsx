@@ -7,6 +7,7 @@ import WordPullUp from "./word-pull-up";
 
 import { cn } from "@/lib/utils";
 
+
 interface TextRevealByWordProps {
   text: string;
   className?: string;
@@ -24,20 +25,16 @@ export const TextRevealByWord: FC<TextRevealByWordProps> = ({
   const words = text.split(" ");
 
   return (
-    <div ref={targetRef} className={cn("relative z-0 h-[200vh]", className)}>
+    <div ref={targetRef} className={cn("relative z-0 h-[200vh] ", className)}>
       <div
         className={
-          "sticky top-0 mx-auto flex h-[50%] max-w-8xl items-center bg-transparent px-[1rem] py-[10rem] justify-start"
+          "sticky top-0 mx-auto  h-[20%] max-w-8xl items-center bg-transparent px-[1rem] py-[10vw]"
         }
       >
-        
-        <div className = "absolute right-[-1rem] z-5 w-[30rem] mt-[6rem]">        
-            <Card content={"Buy and Sell Pre-Loved items"}/>
-        </div>
         <p
           ref={targetRef}
           className={
-            "flex flex-wrap xl:p-5 font-bold text-black/20 dark:text-white/20 md:py-[8rem] md:text-xl lg:px-2 lg:py-[20rem] lg:text-[3rem] xl:text-[6rem]"
+            "flex flex-wrap justify-center font-bold  text-black/20 dark:text-white/20 xl:text-[6rem]  text-[4rem] py-[5vw]"
           }
         >
           {words.map((word, i) => {
@@ -68,7 +65,7 @@ const Word: FC<WordProps> = ({ children, progress, range }) => {
       <span className={"absolute opacity-0"}>{children}</span>
       <motion.span
         style={{ opacity: opacity }}
-        className={"text-black dark:text-white"}
+        className={"text-black text-center dark:text-white"}
       >
         {children}
       </motion.span>

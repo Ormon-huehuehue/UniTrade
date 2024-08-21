@@ -11,7 +11,8 @@ export interface activeProps {
   description: string,
   price: string,
   image: string,
-  user: User
+  user: User,
+  sold : boolean
 }
 
 export function ExpandableCardDemo({ cards }: { cards: activeProps[] }) {
@@ -118,7 +119,7 @@ export function ExpandableCardDemo({ cards }: { cards: activeProps[] }) {
           </div>
         ) : null}
       </AnimatePresence>
-      <ul className="w-full mx-auto flex gap-4">
+      <ul className="w-full mx-auto flex flex-wrap gap-5">
         {cards.map((card) => (
           <motion.div
             layoutId={`card-${card.title}-${id}`}

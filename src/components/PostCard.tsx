@@ -5,7 +5,7 @@ export interface PostCardProps{
     title : string,
     price : string,
     image : string,
-    description:string
+    description:string,
     
 }
 

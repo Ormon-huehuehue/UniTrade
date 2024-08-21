@@ -1,7 +1,8 @@
 "use client";
 
-import { motion, Variants } from "framer-motion";
-
+import { motion, Variants, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer"; // for scroll trigger
+import { useEffect } from "react";
 
 import { cn } from "@/lib/utils";
 
@@ -30,14 +31,33 @@ export default function WordPullUp({
   },
   className,
 }: WordPullUpProps) {
+  // Use animation controls
+  const controls = useAnimation();
+
+  // Set up Intersection Observer with react-intersection-observer
+  const { ref, inView } = useInView({
+    triggerOnce: true, // trigger the animation only once
+    threshold: 0.1, // fire when 10% of the component is visible
+  });
+
+  // Play animation when in view
+  useEffect(() => {
+    if (inView) {
+      controls.start("show");
+    } else {
+      controls.start("hidden");
+    }
+  }, [controls, inView]);
+
   return (
     <motion.h1
+      ref={ref} // reference to track visibility
       variants={wrapperFramerProps}
       initial="hidden"
-      animate="show"
+      animate={controls} // use animation controls
       className={cn(
         "font-display font-bold leading-[5rem] tracking-[-0.02em] drop-shadow-sm",
-        className,
+        className
       )}
     >
       {words.split(" ").map((word, i) => (
@@ -45,7 +65,7 @@ export default function WordPullUp({
           key={i}
           variants={framerProps}
           style={{ display: "inline-block", paddingRight: "8px" }}
-          className= "xl:text-[12rem] md:text-[5rem] lg:text-[6rem] mt-12"
+          className="text-[12vw] mt-[5vw]"
         >
           {word === "" ? <span>&nbsp;</span> : word}
         </motion.span>
