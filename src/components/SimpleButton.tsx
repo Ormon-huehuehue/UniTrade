@@ -7,20 +7,15 @@ import { motion } from 'framer-motion'
 
 interface ButtonProps{
     label : string,
-    url : string
 }
 
-const Button = ({label, url} :ButtonProps) => {
+const Button = ({label} :ButtonProps) => {
 
   return (
-   
-    <Link href = {url}> 
          <motion.button 
          whileHover={{scale:1.1}}
          whileTap = {{scale:0.9}}
-         className = "bg-gray  rounded-md text-white font-bol font-amatic text-[6vw] px-[6vw] justify-center items-center"> {label}</motion.button>
-    </Link>
-   
+         className = "bg-gray xl:w-[20rem] md:w-[15rem] rounded-md text-white font-bol font-amatic xl:text-[5rem] md:text-[4rem] justify-center items-center"> {label}</motion.button>
   )
 }
 

@@ -7,6 +7,7 @@ import WordPullUp from "./word-pull-up";
 
 import { cn } from "@/lib/utils";
 
+
 interface TextRevealByWordProps {
   text: string;
   className?: string;
@@ -27,17 +28,13 @@ export const TextRevealByWord: FC<TextRevealByWordProps> = ({
     <div ref={targetRef} className={cn("relative z-0 h-[200vh]", className)}>
       <div
         className={
-          "sticky top-0 mx-auto flex h-[50%] max-w-8xl items-center bg-transparent px-[1rem] py-[10rem] justify-start"
+          "sticky top-0 mx-auto  h-[50%] max-w-8xl items-center bg-transparent px-[1rem] py-[10rem] justify-center"
         }
       >
-        
-        <div className = "absolute right-[-1rem] z-5 w-[30rem] mt-[6rem]">        
-            <Card content={"Buy and Sell Pre-Loved items"}/>
-        </div>
         <p
           ref={targetRef}
           className={
-            "flex flex-wrap xl:p-5 font-bold text-black/20 dark:text-white/20 md:py-[8rem] md:text-xl lg:px-2 lg:py-[20rem] lg:text-[3rem] xl:text-[6rem]"
+            "flex flex-wrap font-bold text-black/20 dark:text-white/20  text-[5vw] py-[5vw]"
           }
         >
           {words.map((word, i) => {
