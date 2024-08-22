@@ -26,7 +26,7 @@ const BasicInfoSection = () => {
           <div className=" w-[40vw] absolute right-[28%] ">
             <img
               src="https://images.ctfassets.net/005nulnwwll2/3smdwTwU6DHhTo9tyOAElT/b5ac8699890d874a7fd32efe82af0cff/person-sitting-looking-at-phone.png?fm=webp&w=1600"
-              className="mx-auto sm:mx-0"
+              className="mx-auto sm:mx-0 drop-shadow-2xl"
               alt="Person sitting looking at phone"
             />
           </div>
@@ -34,7 +34,7 @@ const BasicInfoSection = () => {
 
 
           {/* Cards */}
-          <div className="mt-[25vw] z-5 flex flex-col items-center justify-center gap-5">
+          <div className="mt-[25vw] z-5 flex flex-col items-center justify-center gap-5 ">
             <Card content={"For the students, By the students"} />
             <Card content={"Buy and Sell Pre-Loved items"} />
           </div>

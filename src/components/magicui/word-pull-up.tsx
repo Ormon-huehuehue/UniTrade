@@ -56,7 +56,7 @@ export default function WordPullUp({
       initial="hidden"
       animate={controls} // use animation controls
       className={cn(
-        "font-display font-bold leading-[5rem] tracking-[-0.02em] drop-shadow-sm",
+        "font-display font-bold leading-[5rem] tracking-[-0.02em] drop-shadow-xl",
         className
       )}
     >
@@ -65,7 +65,7 @@ export default function WordPullUp({
           key={i}
           variants={framerProps}
           style={{ display: "inline-block", paddingRight: "8px" }}
-          className="text-[12vw] mt-[5vw]"
+          className="text-[12vw] mt-[5vw] "
         >
           {word === "" ? <span>&nbsp;</span> : word}
         </motion.span>

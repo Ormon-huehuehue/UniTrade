@@ -6,6 +6,7 @@ import TextRevealByWord from "@/components/magicui/text-reveal";
 import Card from "@/components/Card";
 import BasicInfoSection from "@/components/BasicInfoSection";
 import QuestionComponent from "@/components/QuestionComponent";
+import GetStarted from "@/components/GetStarted";
 
 export default async function Home() {
 
@@ -22,13 +23,13 @@ export default async function Home() {
       text="Uni Trade"
       />
    
-        <div className = "flex flex-col lg:flex-row flex-shrink lg:w-1/2 w-[60%] justify-around items-center z-15 xl:mt-2 md:mt-0 gap-5 ">
+        <div className = "flex flex-col lg:flex-row flex-shrink lg:w-1/2 w-[60%] justify-around items-center z-15 xl:mt-2 md:mt-0 gap-5 mt-5 ">
           <Button label = "BUY" url = "/buy"/>
           <Button label = "SELL" url = "/sell"/>
         </div>
 
-        <div className = "lg:absolute z-7 w-[50vw] right-0 top-[15vw] hidden lg:block "> 
-          <img src="https://images.ctfassets.net/005nulnwwll2/3lZNIBc8GqmRDrAd62AUZg/1de08f8924fbfd1b31708ad51d6aac06/person-with-books-on-phone.png?fm=webp&w=3000"></img>
+        <div className = "lg:absolute z-7 w-[50vw] right-0 top-[15vw] hidden lg:block"> 
+          <img src="https://images.ctfassets.net/005nulnwwll2/3lZNIBc8GqmRDrAd62AUZg/1de08f8924fbfd1b31708ad51d6aac06/person-with-books-on-phone.png?fm=webp&w=3000" className = "drop-shadow-lg"></img>
         </div>
       </div>
 
@@ -61,6 +62,10 @@ export default async function Home() {
           </div>
 
     </section>
+
+
+    {/* GET STARTED */}
+    <GetStarted/>
 
     {/* footer */}
     <footer>
