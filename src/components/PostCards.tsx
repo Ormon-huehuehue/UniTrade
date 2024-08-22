@@ -17,9 +17,6 @@ useEffect(()=>{
     then((res)=>{
       setPosts(res.data)
     })
-    .then(()=>{
-      console.log("Posts", posts)
-    })
   },[])
 
   return (

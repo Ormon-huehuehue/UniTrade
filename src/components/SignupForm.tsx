@@ -53,9 +53,6 @@ export function SignupForm() {
       return;
     }
     
-    console.log("title", title)
-    console.log("Description: ", description);
-    console.log("Price: ", price);
 
 
     if(file){
@@ -64,9 +61,8 @@ export function SignupForm() {
       })
   
       const size = res.size;
-      console.log("size : ",size);
+     
       const url = res.url;
-      console.log("url : ", url);
       
       const response = await axios.post("/api/post",{
           title,
@@ -76,7 +72,6 @@ export function SignupForm() {
           url
       })
 
-      console.log(response);
       console.log("Form submitted");
       setIsLoading(false);
       return

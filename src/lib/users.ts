@@ -18,7 +18,6 @@ export interface UserInt{
 export async function createUser(data : User){
     try{
         console.log("Trying to create user")
-        console.log(data)
         const user = await prisma.user.create({data});
         console.log("User created")
         return {user};

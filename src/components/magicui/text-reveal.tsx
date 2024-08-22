@@ -4,6 +4,7 @@ import { FC, ReactNode, useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Card from "../Card";
 import WordPullUp from "./word-pull-up";
+import FloatingScrollIcon from "../FloatingScrollIcon";
 
 import { cn } from "@/lib/utils";
 
@@ -28,15 +29,15 @@ export const TextRevealByWord: FC<TextRevealByWordProps> = ({
     <div ref={targetRef} className={cn("relative z-0 h-[200rem] ", className)}>
       <div
         className={
-          "sticky top-[25vh] mx-auto  h-[20%] max-w-8xl items-center bg-transparent px-[1rem] "
+          "sticky top-[10vh] mx-auto  h-[20%] max-w-8xl items-center bg-transparent px-[1rem] "
         }
       >
         <p
           ref={targetRef}
           className={
-            "flex flex-wrap justify-center font-bold  text-black/20 dark:text-white/20 xl:text-[6rem]  text-[4rem] py-[5vw]"
+            "flex flex-wrap justify-center font-bold  text-black/20 dark:text-white/20 xl:text-[6rem]  text-[4rem] pt-[2vw]"
           }
-        >
+          >
           {words.map((word, i) => {
             const start = i / words.length;
             const end = start + 1 / words.length;
@@ -47,6 +48,7 @@ export const TextRevealByWord: FC<TextRevealByWordProps> = ({
             );
           })}
         </p>
+          <FloatingScrollIcon/>
       </div>
     </div>
   );
