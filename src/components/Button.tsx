@@ -18,7 +18,7 @@ const Button = ({label, url} :ButtonProps) => {
          <motion.button 
          whileHover={{scale:1.1}}
          whileTap = {{scale:0.9}}
-         className = "bg-gray  rounded-md text-white font-bol font-amatic text-[6vw] px-[6vw] justify-center items-center"> {label}</motion.button>
+         className = "bg-gray  rounded-md text-white font-amatic lg:text-[6vw] text-[12vw] md:text-[6vw] lg:px-[6vw] px-[20vw] justify-center items-center"> {label}</motion.button>
     </Link>
    
   )

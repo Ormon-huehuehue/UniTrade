@@ -12,11 +12,11 @@ const Navbar =  () => {
 
 
   return (
-    <nav className = "py-2 px-5 flex justify-between font-amatic">
-        <div id="links" className = "md:text-4xl xsm:text-2xl  flex gap-10 items-center">
+    <nav className = "py-1 md:py-2 px-5 flex justify-between font-amatic">
+        <div id="links" className = "md:text-4xl text-2xl  flex gap-10 items-center">
             <Link href = "/" className = "font-amatic font-bold hover:text-white" >Uni Trade</Link>
-            <Link href = "/buy" className = "font-bold  cursor-pointer  hover:text-white"> Buy</Link>
-            <Link href = "/sell" className = "font-bold cursor-pointer hover:text-white" > Sell </Link>
+            <Link href = "/buy" className = "font-bold  cursor-pointer hidden sm:block  hover:text-white"> Buy</Link>
+            <Link href = "/sell" className = "font-bold cursor-pointer hidden sm:block hover:text-white" > Sell </Link>
         </div>
         <div className ="flex items-center gap-10 font-montserrat ">
             <SignedIn>

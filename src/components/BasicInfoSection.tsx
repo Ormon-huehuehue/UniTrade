@@ -2,6 +2,9 @@ import React from 'react';
 import Card from './Card';
 import TextRevealByWord from './magicui/text-reveal';
 import WordPullUp from './magicui/word-pull-up';
+import { RiScrollToBottomLine } from "react-icons/ri";
+import FloatingScrollIcon from './FloatingScrollIcon';
+
 
 const BasicInfoSection = () => {
   return (
@@ -28,6 +31,8 @@ const BasicInfoSection = () => {
             />
           </div>
 
+
+
           {/* Cards */}
           <div className="mt-[25vw] z-5 flex flex-col items-center justify-center gap-5">
             <Card content={"For the students, By the students"} />
@@ -35,8 +40,10 @@ const BasicInfoSection = () => {
           </div>
         </div>
 
+        <FloatingScrollIcon/>
+
         {/* Text Reveal - Only Visible on Larger Screens */}
-        <div>
+        <div className = "flex items-center justify-center">
           <TextRevealByWord text="Simplify college life, one trade at a time" />
         </div>
 

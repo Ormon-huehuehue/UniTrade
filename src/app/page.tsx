@@ -10,30 +10,28 @@ import QuestionComponent from "@/components/QuestionComponent";
 export default async function Home() {
 
   return (
-  <div className="h-screen object-fill flex flex-col">
+  <div className="h-100vh object-fill">
     <div className="absolute top-0 left-0 w-full z-10 bg-sageGreen">
       <Navbar />
     </div>
 
-    <section className = "bg-sageGreen pb-10 ">
-      <div className = "mx-[2vw] relative ">
-     
-
+    <section className = "bg-sageGreen py-10 h-[100vh]">
+      <div className = "ml-[2vw] mr-[5vw] lg:relative flex flex-col items-center lg:items-start lg:top-0 mt-[20vw] lg:mt-0 ">
       <GradualSpacing
-      className=" text-center font-bold tracking-[-0.1em]  text-black dark:text-white text-[30vw] font-amatic"
+      className="lg:mt-[-5vw] text-center font-bold tracking-[-0.1em]  text-black dark:text-white lg:text-[30vw] font-amatic text-[35vw] md:text-[vw]"
       text="Uni Trade"
       />
    
+        <div className = "flex flex-col lg:flex-row flex-shrink lg:w-1/2 w-[60%] justify-around items-center z-15 xl:mt-2 md:mt-0 gap-5 ">
+          <Button label = "BUY" url = "/buy"/>
+          <Button label = "SELL" url = "/sell"/>
+        </div>
 
-        <div className = "absolute z-7 w-[50vw] right-0 top-[20vw]"> 
+        <div className = "lg:absolute z-7 w-[50vw] right-0 top-[15vw] hidden lg:block "> 
           <img src="https://images.ctfassets.net/005nulnwwll2/3lZNIBc8GqmRDrAd62AUZg/1de08f8924fbfd1b31708ad51d6aac06/person-with-books-on-phone.png?fm=webp&w=3000"></img>
         </div>
       </div>
 
-        <div className = "flex flex-shrink w-1/2 justify-around z-15 xl:mt-2 md:mt-0 ">
-          <Button label = "BUY" url = "/buy"/>
-          <Button label = "SELL" url = "/sell"/>
-        </div>
       <div>
       </div>
     </section>
@@ -48,8 +46,8 @@ export default async function Home() {
     
 
     {/* Burning questions */}
-    <section className = "flex flex-col bg-sageGreen px-5">
-      <div className="flex justify-center top-[16vw] z-50 font-amatic mx-5 font-bold ">
+    <section className = "flex flex-col bg-sageGreen px-5 pb-10">
+      <div className="flex justify-center mt-[2vw] z-50 font-amatic mx-5 font-bold ">
           <WordPullUp
             className="ml-5 font-bold tracking-[-0.02em] text-black dark:text-white justify-start"
             words="BURNING  QUESTIONS"
